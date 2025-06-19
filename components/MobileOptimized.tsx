@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, Mail, Phone, MapPin, User, Code, Briefcase, Award, MessageSquare } from 'lucide-react'
 import { ChatBot } from './ChatBot'
+import Image from 'next/image'
+
 
 const tabs = [
   { id: 'profile', label: 'Profile', icon: User, gradient: 'from-purple-500 to-pink-500' },
@@ -33,8 +35,22 @@ export function MobileOptimized() {
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col items-center text-center px-6 py-8"
     >
-      <div className="w-24 h-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 shadow-2xl">
-        <span className="text-3xl font-bold text-white">GN</span>
+      <div className="w-32 h-32 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mb-6 shadow-2xl overflow-hidden">
+        <Image
+          src="/profile.jpg"
+          alt="Gokulasigamani N"
+          width={128}
+          height={128}
+          className="w-full h-full object-cover rounded-full"
+          style={{ objectPosition: 'center 5%' }}
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            if (e.currentTarget.parentElement) {
+              e.currentTarget.parentElement.innerHTML = '<span class="text-5xl font-bold text-white flex items-center justify-center w-full h-full">GN</span>';
+            }
+          }}
+          priority
+        />
       </div>
       
       <h1 className="text-3xl font-black text-white mb-2">Gokulasigamani N</h1>
