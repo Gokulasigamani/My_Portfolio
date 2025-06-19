@@ -50,17 +50,6 @@ export function Portfolio() {
     return (
       <>
         <MobileOptimized />
-        <ChatBot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
-        <motion.button
-          onClick={() => setIsChatOpen(!isChatOpen)}
-          className="fixed bottom-6 right-6 z-50 cyber-button p-3 rounded-full shadow-lg"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ y: [0, -8, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-        >
-          <MessageSquare size={20} />
-        </motion.button>
       </>
     )
   }

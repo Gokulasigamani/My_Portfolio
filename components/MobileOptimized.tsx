@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Mail, Phone, MapPin, User, Code, Briefcase, Award } from 'lucide-react'
+import { Github, Linkedin, Mail, Phone, MapPin, User, Code, Briefcase, Award, MessageSquare } from 'lucide-react'
+import { ChatBot } from './ChatBot'
 
 const tabs = [
   { id: 'profile', label: 'Profile', icon: User, gradient: 'from-purple-500 to-pink-500' },
@@ -22,6 +23,7 @@ const techStack = [
 
 export function MobileOptimized() {
   const [activeTab, setActiveTab] = useState('profile')
+  const [isChatOpen, setIsChatOpen] = useState(false)
   
   console.log('Clean MobileOptimized component rendered with tabs')
 
@@ -248,8 +250,20 @@ export function MobileOptimized() {
       
       {/* Content Area */}
       <div className="relative z-10 flex-1 flex flex-col">
+        {/* ChatBot and Toggle Button */}
+        <ChatBot isOpen={isChatOpen} setIsOpen={setIsChatOpen} />
+        <motion.button
+          onClick={() => setIsChatOpen(!isChatOpen)}
+          className="fixed bottom-24 right-6 z-50 cyber-button p-3 rounded-full shadow-lg"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          animate={{ y: [0, -8, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+        >
+          <MessageSquare size={20} />
+        </motion.button>
         {/* Tab Content */}
-        <div className="flex-1 overflow-y-auto">
+        <div className="flex-1 overflow-y-auto pb-24">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -262,14 +276,12 @@ export function MobileOptimized() {
             </motion.div>
           </AnimatePresence>
         </div>
-
         {/* Bottom Tab Navigation */}
-        <div className="bg-gray-900/90 backdrop-blur-sm border-t border-gray-700/50 px-2 py-3">
+        <div className="bg-gray-900/90 backdrop-blur-sm border-t border-gray-700/50 px-2 py-3 fixed bottom-0 left-0 w-full z-40">
           <div className="flex justify-around items-center">
             {tabs.map((tab) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id
-              
               return (
                 <button
                   key={tab.id}
