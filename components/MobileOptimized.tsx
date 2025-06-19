@@ -95,13 +95,24 @@ export function MobileOptimized() {
         </a>
       </div>
 
-      <div className="w-full max-w-sm">
-        <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 backdrop-blur-sm rounded-2xl p-4 border border-purple-500/30">
-          <h3 className="text-white font-bold mb-2">Education</h3>
-          <p className="text-purple-200 text-sm">B.Tech (IT), MCET - CGPA 8.0</p>
-          <p className="text-gray-300 text-xs mt-1">HSC: 77.7% | SSLC: 81.2%</p>
-        </div>
-      </div>
+     <div className="w-full max-w-sm">
+  <div className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 backdrop-blur-sm rounded-2xl p-5 border border-purple-500/30 shadow-md">
+    <h3 className="text-white text-lg font-bold mb-4 border-b border-purple-400/30 pb-2">Education</h3>
+    
+    <div className="mb-4">
+      <p className="text-purple-300 text-sm font-semibold mb-1">UG</p>
+      <p className="text-purple-100 text-sm">Dr. Mahalingam College of Engineering and Technology,<br />Pollachi</p>
+    </div>
+    
+    <div>
+      <p className="text-purple-300 text-sm font-semibold mb-1">HSC & SSLC</p>
+      <p className="text-purple-100 text-sm">Bharani Park Matriculation Hr. Sec. School,<br />Karur</p>
+    </div>
+  </div>
+</div>
+
+
+
     </motion.div>
   )
 
@@ -184,6 +195,10 @@ export function MobileOptimized() {
           </div>
         </div>
 
+
+        
+        
+
         <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-4 border border-blue-500/30">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
@@ -202,6 +217,30 @@ export function MobileOptimized() {
             <span className="px-2 py-1 bg-cyan-600/30 text-cyan-200 rounded-full text-xs">Real-time Chat</span>
           </div>
         </div>
+
+        <div className="bg-gradient-to-br from-blue-900/30 to-cyan-900/30 backdrop-blur-sm rounded-xl p-4 border border-blue-500/30">
+  <div className="flex items-center gap-3 mb-3">
+    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
+      <span className="text-white font-bold text-sm">S</span>
+    </div>
+    <div>
+      <h3 className="font-bold text-white">Synthetic Bee</h3>
+      <p className="text-blue-300 text-xs">Front-End & AI Workflow</p>
+    </div>
+  </div>
+  <p className="text-gray-300 text-sm mb-3">
+    SyntheticBee is an AI-powered platform that automates workflows, simplifies projects, and connects with tools like Slack, Jira, and GitHub—driven by intuitive chat and smart UI.
+   </p>
+  <div className="flex flex-wrap gap-1">
+    <span className="px-2 py-1 bg-blue-600/30 text-blue-200 rounded-full text-xs">React.js</span>
+    <span className="px-2 py-1 bg-cyan-600/30 text-cyan-200 rounded-full text-xs">N8N</span>
+    <span className="px-2 py-1 bg-purple-600/30 text-purple-200 rounded-full text-xs">Langflow</span>
+    <span className="px-2 py-1 bg-indigo-600/30 text-indigo-200 rounded-full text-xs">CrewAI</span>
+  </div>
+</div>
+
+
+        
       </div>
     </motion.div>
   )
